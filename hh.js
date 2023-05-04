@@ -1,15 +1,8 @@
 'use strict';
 
-const num = 50;
-
-switch (num) {
-    case 49:
-        console.log("no");
-        break;
-    case 50:
-        console.log('yes');
-        break;
-    default:
-        console.log('not tooday');
-        break;
+let num = 50;
+ 
+for (let i = 1; i < 8; i++) {
+    console.log(num);
+    num++;
 }
