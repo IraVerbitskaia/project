@@ -11,12 +11,6 @@ function start() {
 
 start();
 
-function swowMyDB() {
- while (!== privat) {
-   console.log(personalMovieDB);
- }
-}
-
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},    
@@ -44,7 +38,6 @@ const personalMovieDB = {
  rememberMyFilms();
 
  function detectPersonalLevel() {
-   console.log(personalMovieDB);
    if (personalMovieDB.count < 10) {
       alert('Просмотрено довольно мало фильмов');
    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <=30) {
@@ -57,11 +50,20 @@ const personalMovieDB = {
  }
  detectPersonalLevel();
 
+ function showMyDB (hidden) {
+   if (!hidden) {
+     console.log(personalMovieDB);
+   }
+  }
+  
+  showMyDB(personalMovieDB.privat);
+
 
  function writeYourGenres () {
    for (let i = 0; i < 3; i++) {
-      personalMovieDB.genres = prompt("Ваш любимый жанр под номером ${++i}");
+      personalMovieDB.genres[i+1] = prompt(`Ваш любимый жанр под номером ${i+1}`);
    }
  }
 
-
+writeYourGenres();
+ 
